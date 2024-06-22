@@ -6,9 +6,7 @@ type Employee = {
 };
 
 export default async function About() {
-  const response = await fetch(
-    `https://dummy.restapiexample.com/api/v1/employees`,
-  );
+  const response = await fetch(`http://localhost:3000/api/employees`);
   const responseJson = await response.json();
 
   const employees: Employee[] = responseJson.data;

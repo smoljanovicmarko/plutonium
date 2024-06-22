@@ -14,9 +14,7 @@ export default function About() {
 
   useEffect(() => {
     async function fetchEmployees() {
-      const response = await fetch(
-        `https://dummy.restapiexample.com/api/v1/employees`,
-      );
+      const response = await fetch(`http://localhost:3000/api/employees`);
       const responseJson = await response.json();
       setEmployees(responseJson.data);
     }

@@ -1,16 +1,15 @@
 import React from "react";
-import { Authenticator } from "@aws-amplify/ui-react";
 import "@aws-amplify/ui-react/styles.css";
+import Logout from "@/components/Logout";
+import { AuthGetCurrentUserServer } from "@/utils/amplify-utils";
 
-export default function Home() {
+export default async function Home() {
+  const user = await AuthGetCurrentUserServer();
+
   return (
-    <Authenticator>
-      {({ signOut, user }) => (
-        <main>
-          <h1>Home</h1>
-          <button onClick={signOut}>Sign out</button>
-        </main>
-      )}
-    </Authenticator>
+    <main>
+      <h1>Home</h1>
+      {user && <Logout />}
+    </main>
   );
 }
