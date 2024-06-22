@@ -6,10 +6,29 @@ type Employee = {
 };
 
 export default async function About() {
-  const response = await fetch(`http://localhost:3000/api/employees`);
-  const responseJson = await response.json();
+  // const response = await fetch(`http://localhost:3000/api/employees`);
+  // const responseJson = await response.json();
 
-  const employees: Employee[] = responseJson.data;
+  const employees: Employee[] = [
+    {
+      id: 1,
+      employee_name: "John Doe",
+      employee_salary: 50000,
+      employee_age: 30,
+    },
+    {
+      id: 2,
+      employee_name: "Jane Smith",
+      employee_salary: 60000,
+      employee_age: 25,
+    },
+    {
+      id: 3,
+      employee_name: "Mike Johnson",
+      employee_salary: 55000,
+      employee_age: 35,
+    },
+  ];
 
   return (
     <main>
